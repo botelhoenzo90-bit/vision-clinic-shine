@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 45 100% 50%;
+
+    --radius: 0.75rem;
+
+    --gold: 45 100% 50%;
+    --gold-dark: 40 100% 40%;
+    --gold-light: 48 100% 60%;
+    --dark-bg: 0 0% 5%;
+    --dark-card: 0 0% 10%;
+    --dark-elevated: 0 0% 14%;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 45 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 45 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(45 100% 50%), hsl(40 100% 65%), hsl(45 100% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-gold {
+    background: linear-gradient(135deg, hsl(40 100% 40%), hsl(45 100% 50%), hsl(48 100% 60%));
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(180deg, hsl(0 0% 5%), hsl(0 0% 10%));
+  }
+
+  .bg-gradient-gold-subtle {
+    background: linear-gradient(135deg, hsl(45 100% 50% / 0.1), hsl(45 100% 50% / 0.05));
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 30px hsl(45 100% 50% / 0.3), 0 0 60px hsl(45 100% 50% / 0.1);
+  }
+
+  .glow-gold-intense {
+    box-shadow: 0 0 40px hsl(45 100% 50% / 0.5), 0 0 80px hsl(45 100% 50% / 0.2);
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 20px hsl(45 100% 50% / 0.5);
+  }
+
+  .slide-container {
+    width: 1920px;
+    height: 1080px;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 8%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(45 100% 50% / 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(45 100% 50% / 0.6);
+}
+/* Marquee animation - CSS puro para performance */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+.marquee-track {
+  animation: marquee-scroll 12s linear infinite;
+  will-change: transform;
+}
+
+@media (max-width: 640px) {
+  .marquee-track {
+    animation-duration: 8s;
+  }
+}
+
+#lovable-badge {
+display: none !important;
+}
